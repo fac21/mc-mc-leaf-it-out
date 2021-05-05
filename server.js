@@ -14,7 +14,11 @@ server.use(staticHandler);
 
 
 
+server.get("/sign-up", signUp.get)
+server.post("/sign-up", bodyParser, signUp.post);
 
+server.get("/log-in", logIn.get)
+server.post("/log-in", bodyParser, logIn.post);
 
 
 const PORT = process.env.PORT || 3000;
