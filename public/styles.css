@@ -1,0 +1,13 @@
+* { 
+	box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+	min-height: 100%;
+    /* background-image: url(plant_seamless_background.jpg); */
+}
+
+main {
+    display: flex;
+}
