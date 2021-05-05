@@ -7,7 +7,7 @@ function get(request, response) {
     <br>
     <a href="/log-in">Log In</a>
     `;
-    response.send(template('landing', 'html'))
+    response.send(template('landing', html))
 }
 
 module.exports = { get }
