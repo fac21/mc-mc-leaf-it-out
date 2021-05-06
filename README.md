@@ -40,7 +40,7 @@ We split up into teams and tried to swap partners regularly, with a rough schedu
 
 In terms of the code, we set up a typical file architecture structure based off Oli's example:
 
-Screenshot 2021-05-06 at 12.39.40![image](https://user-images.githubusercontent.com/23028288/117305780-ff728000-ae76-11eb-8a17-c198768282f8.png)
+![image](https://user-images.githubusercontent.com/23028288/117305780-ff728000-ae76-11eb-8a17-c198768282f8.png)
 
 We created a function that adds a plant to the database using 'map'. This was based on Craig's group's code last week for their 'Grinder' skateboarding app. We used tis to 'map', or 'add',  the plant type and content submitted by the user to the plant info section in the SQL database.
 
