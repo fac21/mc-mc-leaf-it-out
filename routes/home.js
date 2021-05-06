@@ -33,25 +33,24 @@ function get(request, response) {
     <a href="/log-in">Log in</a>
   `;
   }
-  //const reviewList = model.getReviews();
-  //console.log(reviewList);
   db.query(
-    "SELECT reviews.park_name, reviews.park_location, reviews.review_content, users.username FROM reviews INNER JOIN users ON reviews.user_id = users.id"
+    "SELECT plants.plant_type, plants.plant_content, plants.img_url, users.username FROM plants INNER JOIN users ON plants.user_id = users.id"
   ).then((result) => {
-    //console.log(result);
-    const reviews = result.rows; // an array of obecjts, where each object is a row from database (parkname, review content etc)
-    const reviewList = reviews
-      .map((review) => {
+    const plants = result.rows; // an array of obecjts, where each object is a row from database (parkname, review content etc)
+    const plantList = plants
+      .map((plant) => {
         return `
         <li>
-        <h2>${review.park_name}, ${review.park_location}</h2>
-        <p>"${review.review_content}"</p>
-        <p>Reviewed by: ${review.username}</p>
+        <h2>${plant.plant_type}</h2>
+        <img src="${plant.img_url}">
+        <p class="plant-content">"${plant.plant_content}"</p>
+        <p>- ${plant.username}</p>
         </li>
       `;
       })
       .join("");
-    response.send(html.getHtmlTemp('homepage', userHTML));
+    //   const html = ``
+    response.send(html.getHtmlTemp('Leaf it Out Homepage', plantList));
   });
 }
 

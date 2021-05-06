@@ -23,13 +23,13 @@ function createSession(sid, dataObj) {
 //     .query(DELETE_SESSION, [sid]);
 // }
 
-// function getSession(sid) {
-//   const SELECT_SESSION = "SELECT data FROM sessions WHERE sid=$1";
-//   return db.query(SELECT_SESSION, [sid]).then((result) => {
-//     const singleResult = result.rows[0];
-//     return singleResult && singleResult.data;
-//   });
-// }
+function getSession(sid) {
+  const SELECT_SESSION = "SELECT data FROM sessions WHERE sid=$1";
+  return db.query(SELECT_SESSION, [sid]).then((result) => {
+    const singleResult = result.rows[0];
+    return singleResult && singleResult.data;
+  });
+}
 
 
 function getUser(email) {
@@ -74,7 +74,7 @@ function getUser(email) {
 module.exports = {
   createUser,
   createSession,
-//   getSession,
+  getSession,
 //   getReviews,
   getUser
 //   createReview,
