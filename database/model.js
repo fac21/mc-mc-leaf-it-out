@@ -10,12 +10,31 @@ function createUser(username, email, hash) {
     .then((result) => result.rows[0]);
 }
 
+function createPlant( plant_type, plant_content, img_url) {
+  console.log("string")
+  const INSERT_PLANT = `
+    INSERT INTO plants ( plant_type, plant_content, img_url, created_at) VALUES
+  ($1, $2, $3,  (SELECT CURRENT_TIMESTAMP));
+    `;
+  return db.query( INSERT_PLANT, [ plant_type, plant_content, img_url]);
+}
+
+
 function createSession(sid, dataObj) {
-  const INSERT_SESSION = `INSERT INTO sessions (sid, data) VALUES ($1, $2) RETURNING sid`;
+  const INSERT_SESSION = `INSERT INTO sessions (sid, data) VALUES ($1, $2) RETURNING sid;`;
   return db
     .query(INSERT_SESSION, [sid, dataObj])
     .then((result) => result.rows[0].sid);
 }
+
+function getUserSessionData(sid) {
+  const SELECT_SESSION_DATA = `
+        SELECT data FROM sessions WHERE sid = $1;
+    `;
+  return db.query(SELECT_SESSION_DATA, [sid]).then((result) => result.rows[0]);
+}
+
+
 
 // function deleteSession(sid) {
 //   const DELETE_SESSION = `DELETE FROM sessions WHERE sid=$1`;
@@ -76,7 +95,9 @@ module.exports = {
   createSession,
 //   getSession,
 //   getReviews,
-  getUser
+  getUser,
+  createPlant,
+  getUserSessionData
 //   createReview,
 //   deleteSession
 };
