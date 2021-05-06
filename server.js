@@ -30,6 +30,8 @@ server.post("/add-plant", bodyParser, addPlant.post);
 
 server.get("/home", home.get)
 
+server.get("/", landing.get)
+
 
 const PORT = process.env.PORT || 3000;
 
