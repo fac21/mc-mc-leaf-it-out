@@ -1,7 +1,9 @@
 const auth = require("../auth.js");
+const template = require("../template.js");
+
 
 function get(request, response) {
-    response.send(`
+  const signupForm = `
         <h1>Sign up</h1>
         <form action="sign-up" method="POST">
           <label for="username">Name</label>
@@ -12,7 +14,9 @@ function get(request, response) {
           <input type="password" id="password" name="password">
           <button type="submit">Sign up</button>
         </form>
-      `);
+      `;
+      const html = template.getHtmlTemp("Leaf it Out Sign Up", signupForm);
+      response.send(html)
   }
   
   function post(request, response) {
