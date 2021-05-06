@@ -80,8 +80,4 @@ function get(request, response) {
     // response.redirect("/addPlant");
   }
 
-
-
-
-
 module.exports = { get, post };

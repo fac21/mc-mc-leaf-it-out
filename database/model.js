@@ -10,6 +10,10 @@ function createUser(username, email, hash) {
     .then((result) => result.rows[0]);
 }
 
+function getImage(id) {
+  return init.then(db => db.get("SELECT img FROM plants WHERE plant_id=?", plant_id));
+}
+
 function createPlant( plant_type, plant_content, img_url) {
   console.log("string")
   const INSERT_PLANT = `
@@ -97,7 +101,8 @@ module.exports = {
 //   getReviews,
   getUser,
   createPlant,
-  getUserSessionData
+  getUserSessionData,
+  getImage
 //   createReview,
 //   deleteSession
 };

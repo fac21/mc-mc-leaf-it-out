@@ -18,7 +18,7 @@ CREATE TABLE plants (
     plant_id SERIAL PRIMARY KEY,
     plant_type TEXT NOT NULL,
     plant_content TEXT NOT NULL,
-    img_url TEXT,
+    img BYTEA,
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     created_at TIMESTAMP
 );
