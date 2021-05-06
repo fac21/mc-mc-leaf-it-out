@@ -22,7 +22,7 @@ Here are some of the initial drafts:
 
 ![Screenshot 2021-05-06 at 12 18 23](https://user-images.githubusercontent.com/23028288/117305524-c1755c00-ae76-11eb-853d-132ec6e9899a.png)
 
-Screenshot 2021-05-06 at 12.22.15![image](https://user-images.githubusercontent.com/23028288/117305713-eec20a00-ae76-11eb-850b-d1a2e4151bf5.png)
+![image](https://user-images.githubusercontent.com/23028288/117305713-eec20a00-ae76-11eb-850b-d1a2e4151bf5.png)
 
 In the end, we only decided to base the font for the site of this design in Figma, as well as some of the layout/spiel.
 
