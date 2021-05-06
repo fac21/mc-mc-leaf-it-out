@@ -5,7 +5,9 @@ const html = require("../template.js");
 function get(request, response) {
   const sid = request.signedCookies.sid;
   let userHTML;
-//   if (sid) {
+
+//   CRAIG PLEASE DELETE 
+//    if (sid) {
 //     model.getSession(sid).then((session) => {
 //       userHTML = `
 //       <h1>Hello ${session.user.username}</h1>
@@ -25,14 +27,13 @@ function get(request, response) {
 //     `;
 //     });
 //   } else {
-
 //     userHTML = `<h1>Hello Skate Mate</h1>
-
 //     <a href="/sign-up">Sign up</a>
 //     <span> | </span>
 //     <a href="/log-in">Log in</a>
 //   `;
 //   }
+
   db.query(
     "SELECT plants.plant_type, plants.plant_content, plants.img_url, users.username FROM plants INNER JOIN users ON plants.user_id = users.id"
   ).then((result) => {
@@ -59,4 +60,31 @@ function get(request, response) {
   });
 }
 
-module.exports = { get };
+
+function deletePlant(request, response) {
+    console.log(request.body);
+    const plantId = request.body.id;
+    const sid = request.signedCookies.sid;
+
+    if(sid){
+        const userData = model.getUserSessionData(sid);
+        const postData = model.getPostByID(plantId);
+
+        Promise.all([userData, postData]).then((values) => {
+            const userId = values[0].data.user.id;
+            const postUserId = values[1].rows[0].user_id;
+
+            if (userId === postUserId) {
+                return model.deletePlant(postId).then(() => {
+                    response.redirect("/home");
+                });    
+            } else {
+                response.redirect("/home");
+            }
+        });
+    } else {
+        response.redirect("/home");
+    }
+}
+
+module.exports = { get, deletePlant };
