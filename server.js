@@ -17,9 +17,17 @@ server.use(cookieParser(process.env.COOKIE_SECRET));
 server.use(staticHandler);
 
 
+
+server.get("/sign-up", signUp.get)
+server.post("/sign-up", bodyParser, signUp.post);
+
+server.get("/log-in", logIn.get)
+server.post("/log-in", bodyParser, logIn.post);
+
 //Creating routes to see in browser
 server.get("/addPlant", addPlant.get);
 server.post("/addPlant", bodyParser, addPlant.post);
+
 
 
 const PORT = process.env.PORT || 3000;
