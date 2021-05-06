@@ -4,12 +4,11 @@ const staticHandler = express.static("public");
 
 //Middleware 
 const cookieParser = require("cookie-parser");
-const homepage = require("./routes/home.js");
 const logIn = require("./routes/logIn.js");
 const signUp = require("./routes/signUp.js");
 const landing = require("./routes/landing.js");
 const home = require("./routes/home.js");
-const addPlant = require("./routes/addPlant");
+const addPlant = require("./routes/addPlant.js");
 const bodyParser = express.urlencoded({ extended: false });
 
 
@@ -26,8 +25,8 @@ server.get("/log-in", logIn.get)
 server.post("/log-in", bodyParser, logIn.post);
 
 //Creating routes to see in browser
-// server.get("/addPlant", addPlant.get);
-// server.post("/addPlant", bodyParser, addPlant.post);
+server.get("/add-plant", addPlant.get);
+server.post("/add-plant", bodyParser, addPlant.post);
 
 server.get("/home", home.get)
 
