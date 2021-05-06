@@ -18,9 +18,7 @@ On our web-app, you'll be able to:
 
 Beautifully designed by our expert team. Once we had an idea for what we wanted the app to be, we initially used Figma to draft up some ideas for the project.
 
-Here are some of the initial drafts:
-
-![Screenshot 2021-05-06 at 12 18 23](https://user-images.githubusercontent.com/23028288/117305524-c1755c00-ae76-11eb-853d-132ec6e9899a.png)
+Here is one of the initial drafts:
 
 ![image](https://user-images.githubusercontent.com/23028288/117305713-eec20a00-ae76-11eb-850b-d1a2e4151bf5.png)
 
@@ -28,7 +26,9 @@ In the end, we only decided to base the font for the site of this design in Figm
 
 We may use Figma briefly again for the next project, but I'm not sure if it'll be useful to use it as extensively as we did for this project.
 
-Also, there was some confusion about how the 'landing page' would look. It was decided that you'd only be able to see images of the plants on the 'home/main' page once you had signed up/logged in.
+Also, there was some confusion about how the 'landing page' would look. It was decided that you'd only be able to see images of the plants on the 'home/main' page once you had signed up/logged in, but the original landing page was formatted differently in Figma:
+
+![Screenshot 2021-05-06 at 12 18 23](https://user-images.githubusercontent.com/23028288/117305524-c1755c00-ae76-11eb-853d-132ec6e9899a.png)
 
 This meant that the 'landing page' would only display things such as the logo, as well as links to log in or sign up.
 
