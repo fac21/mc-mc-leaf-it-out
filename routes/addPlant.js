@@ -12,12 +12,11 @@ function addPlants() {
      <input type="text" id="plant_type" name="plant_type">
      <label for="plant_content">Don't leaf it out tell us whats your plant</label>
      <input type="text" id="plant_content" name="plant_content">
-     <!--
+     <form enctype="multipart/form-data">
      <label for="img_url"> upload picture </label>
      <input type="file" name="img_url">
-     -->
-     <label for="img_url"> img_url </label>
-     <input type="text" name="img_url">
+     </form>
+
 
      
    </div>
