@@ -15,7 +15,16 @@ function get(request, response) {
           <button type="submit">Sign up</button>
         </form>
       `;
-      const html = template.getHtmlTemp("Leaf it Out Sign Up", signupForm);
+      const header = `
+      <header>
+      <img src="leaf-it-out-logo.png" alt="Leaf it Out logo">
+      <div class="header-text">
+      <h1>Hi pal!</h1>
+      <p>Looking to buy or sell your plants? Leaf it to us!</p>
+      </div>
+      </header>
+      `
+      const html = template.getHtmlTemp("Leaf it Out Sign Up", header, signupForm);
       response.send(html)
   }
   

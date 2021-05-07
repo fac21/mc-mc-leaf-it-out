@@ -1,4 +1,4 @@
-function getHtmlTemp(title, mainContent) {
+function getHtmlTemp(title, header, mainContent) {
     return  `
   <!DOCTYPE html>
   <html lang="en">
@@ -16,13 +16,7 @@ function getHtmlTemp(title, mainContent) {
   </head>
   <body>
         <div class="background"></div>
-        <header>
-        <img src="leaf-it-out-logo.png">
-        <div class="header-text">
-        <h1>Hi there, username</h1>
-        <p>Looking to buy or sell your plants? Leaf it to us!</p>
-        </div>
-        </header>
+        ${header}
       <main>
           ${mainContent}
       </main>
