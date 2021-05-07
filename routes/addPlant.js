@@ -61,7 +61,7 @@ function get(request, response) {
       </div>
       </header>
       `
-      const html = template.getHtmlTemp(`addPlant`, header, addPlants());
+      const html = template.getHtmlTemp(`add-plant`, header, addPlants());
       response.send(html);
   }
 
@@ -75,7 +75,7 @@ function get(request, response) {
         .getUserSessionData(sid)
         .then((result) => {
           const user_id = result.data.user.id;
-          return model.createPlant( plant_type,  plant_content, img_url );
+          return model.createPlant( plant_type,  plant_content, img_url, user_id );
         })
         .then(response.redirect("/add-plant"));
     }
