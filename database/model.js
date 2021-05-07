@@ -14,13 +14,12 @@ function getImage(id) {
   return init.then(db => db.get("SELECT img FROM plants WHERE plant_id=?", plant_id));
 }
 
-function createPlant( plant_type, plant_content, img_url) {
-  console.log("string")
+function createPlant( plant_type, plant_content, img_url, user_id) {
   const INSERT_PLANT = `
-    INSERT INTO plants ( plant_type, plant_content, img_url, created_at) VALUES
-  ($1, $2, $3,  (SELECT CURRENT_TIMESTAMP));
+    INSERT INTO plants ( plant_type, plant_content, img_url, user_id, created_at) VALUES
+  ($1, $2, $3, $4,  (SELECT CURRENT_TIMESTAMP));
     `;
-  return db.query( INSERT_PLANT, [ plant_type, plant_content, img_url]);
+  return db.query( INSERT_PLANT, [ plant_type, plant_content, img_url, user_id]);
 }
 
 

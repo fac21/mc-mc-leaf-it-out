@@ -12,7 +12,16 @@ function get(request, response) {
       <button type="submit">Log in</button>
     </form>
     `;
-    const html = template.getHtmlTemp("Leaf it Out Login", loginForm);
+    const header = `
+    <header>
+    <img src="leaf-it-out-logo.png" alt="Leaf it Out logo">
+    <div class="header-text">
+    <h1>Who are yew again?</h1>
+    <p>Looking to buy or sell your plants? Leaf it to us!</p>
+    </div>
+    </header>
+    `
+    const html = template.getHtmlTemp("Leaf it Out Login", header, loginForm);
     response.send(html);
 }
 

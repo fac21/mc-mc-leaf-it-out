@@ -12,12 +12,9 @@ function addPlants() {
      <input type="text" id="plant_type" name="plant_type">
      <label for="plant_content">Don't leaf it out tell us whats your plant</label>
      <input type="text" id="plant_content" name="plant_content">
-     <!--
-     <label for="img_url"> upload picture </label>
-     <input type="file" name="img_url">
-     -->
      <label for="img_url"> img_url </label>
      <input type="text" name="img_url">
+
 
      
    </div>
@@ -55,10 +52,17 @@ function addPlants() {
 
 
 function get(request, response) {
-    // displayPlants().then((post) => {
-      const html = template.getHtmlTemp(`addPlant`, addPlants());
+      const header = `
+      <header>
+      <img src="leaf-it-out-logo.png" alt="Leaf it Out logo">
+      <div class="header-text">
+      <h1>Hi there, username</h1>
+      <p>Looking to buy or sell your plants? Leaf it to us!</p>
+      </div>
+      </header>
+      `
+      const html = template.getHtmlTemp(`add-plant`, header, addPlants());
       response.send(html);
-    // });
   }
 
 
@@ -71,13 +75,11 @@ function get(request, response) {
         .getUserSessionData(sid)
         .then((result) => {
           const user_id = result.data.user.id;
-  console.log("string3")
-          return model.createPlant( plant_type,  plant_content, img_url );
+          return model.createPlant( plant_type,  plant_content, img_url, user_id );
         })
         .then(response.redirect("/add-plant"));
     }
   
-    // response.redirect("/addPlant");
   }
 
 module.exports = { get, post };
